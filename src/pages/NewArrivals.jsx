@@ -1,0 +1,3 @@
+import React from "react";
+import {products} from "../data/products"; import {useStore} from "../context"; import ProductGrid from "../components/ProductGrid";
+export default function NewArrivals(){const {lang}=useStore();const t=lang==="ar";return <main className="container-x py-12"><div className="max-w-2xl mb-10"><div className="text-brand-600 text-xs font-bold uppercase tracking-[.18em]">{t?"جديد على القائمة":"Just landed"}</div><h1 className="text-4xl md:text-5xl font-black mt-2">{t?"أطباق جديدة":"New on the menu"}</h1><p className="text-slate-500 mt-4">{t?"جرب أحدث الإضافات التي أعدها طهاتنا.":"Discover the latest dishes created by our kitchen."}</p></div><ProductGrid products={products.filter(p=>p.new)}/></main>}
